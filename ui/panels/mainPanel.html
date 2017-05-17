@@ -1,0 +1,22 @@
+<div id="quoteSystemMainPanel">
+  <div class="row">
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <li v-for="command in commands">
+        <div class="collapsible-header">
+          {{ command.command }}
+          <span class="grey-text" style="font-size: 0.8rem;">
+            {{ command.description }}
+          </span>
+          <div class="right" style="display: inline-block; height: 25px; margin-top: 0.75rem;">
+            <input class="filled-in" :id="`${ command.config._id }_enabled`" type="checkbox" v-model="command.config.isEnabled" />
+            <label :for="`${ command.config._id }_enabled`" data-position="top" data-tooltip="Disable this command" v-if="command.config.isEnabled === true" />
+            <label :for="`${ command.config._id }_enabled`" data-position="top" data-tooltip="Enable this command" v-else />
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <command-editor :command="command" :hide-fields="[ 'isEnabled' ]" />
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

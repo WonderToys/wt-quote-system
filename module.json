@@ -1,0 +1,20 @@
+{
+	"name": "QuoteSystem",
+	"version": "0.1.0",
+	"author": "WonderToys",
+	"description": "The official Quote System for WonderTools!",
+	"entry": "QuoteSystemModule.js",
+	"commands": [
+		"./commands/AddQuoteCommand",
+		"./commands/DelQuoteCommand",
+		"./commands/QuoteCommand"
+	],
+	"ui": {
+		"panels": {
+			"MainPanel": {
+				"template": "./ui/panels/mainPanel.html",
+				"script": "./ui/panels/mainPanel.js"
+			}
+		}
+	}
+}
